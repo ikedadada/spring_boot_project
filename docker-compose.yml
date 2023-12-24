@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  spring:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - USER_ID=${USER_ID:-1000}
+      - GROUP_ID=${GROUP_ID:-1000}
+    volumes:
+      - .:/app
+    user: "${USER_ID:-1000}:${GROUP_ID:-1000}"
+    tty: true
