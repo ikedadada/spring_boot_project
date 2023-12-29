@@ -14,3 +14,5 @@ RUN addgroup -g $GROUP_ID appuser && adduser -u $USER_ID -G appuser -s /bin/sh -
 USER appuser
 
 WORKDIR /app
+
+CMD ["./gradlew", "bootRun"]
